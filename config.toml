@@ -1,6 +1,6 @@
-baseURL = 'http://example.org/'
+baseURL = 'https://gh.jonaenz.de'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'A Hugo Blog'
 theme = "terminal"
 
 [params]

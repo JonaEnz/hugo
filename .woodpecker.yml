@@ -1,0 +1,7 @@
+pipeline:
+  build:
+    image: alpine
+    commands:
+      - apk update
+      - apk add hugo
+      - hugo

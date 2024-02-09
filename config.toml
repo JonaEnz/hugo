@@ -1,7 +1,7 @@
 baseURL = 'https://gh.jonaenz.de'
 languageCode = 'en-us'
 title = 'A Hugo Blog'
-theme = "terminal"
+theme = "tailwind"
 
 [params]
 contentTypeName = "posts"

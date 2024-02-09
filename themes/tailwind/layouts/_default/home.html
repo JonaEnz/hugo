@@ -1,0 +1,10 @@
+{{ define "main" }}
+  {{ .Content }}
+  {{ range site.RegularPages }}
+    <div class="shadow-xl m-2">
+    <h2 class="text-xl text-purple-400"><a class="shadow" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+    <p class="text-base">{{ .Summary }}</p>
+
+    </div>
+  {{ end }}
+{{ end }}

@@ -12,7 +12,7 @@ Renders a menu for the given menu ID.
 
 {{- with index site.Menus $menuID }}
   <nav>
-  <div class="flex flex-row justify-left h-16">
+  <div class="flex flex-row justify-left h-16 mx-3 my-2">
       {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
     </div>
   </nav>
@@ -33,8 +33,8 @@ Renders a menu for the given menu ID.
         {{- $name = . }}
       {{- end }}
     {{- end }}
-    <div class="m-2 p-3  border-black border">
-      <a
+    <div class="m-2 flex text-black border-black border rounded">
+      <a 
         {{- range $k, $v := $attrs }}
           {{- with $v }}
             {{- printf " %s=%q" $k $v | safeHTMLAttr }}

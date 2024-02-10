@@ -1,3 +1,27 @@
 @import "node_modules/tailwindcss/base";
 @import "node_modules/tailwindcss/components";
 @import "node_modules/tailwindcss/utilities";
+
+body {
+  @apply text-indigo-200;
+}
+
+nav div div a {
+  @apply p-3;
+}
+
+h1 {
+  @apply text-2xl my-2;
+}
+
+h2 {
+  @apply text-xl my-2;
+}
+
+main {
+  @apply leading-normal;
+}
+
+main a {
+  @apply text-indigo-400;
+}

@@ -29,10 +29,6 @@ themeColor = "red"
 
     [languages.en.menu]
       [[languages.en.menu.main]]
-        identifier = "about"
-        name = "About"
-        url = "/about"
-      [[languages.en.menu.main]]
         identifier = "github"
         name = "Github"
         url = "https://github.com/JonaEnz"

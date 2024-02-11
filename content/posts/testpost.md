@@ -14,8 +14,20 @@ color = "" #color from the theme settings
 +++
 
 # Heading
+
 ## Second Heading
-```bash
-rm -rf /
-```
-[Link](google.com)
+
+Here is some text.
+Text with a [Link](https://google.de/).
+
+Another line of text.
+Some **bold** text.
+
+1. first
+2. second
+3. third
+
+- first
+- second
+- third
+

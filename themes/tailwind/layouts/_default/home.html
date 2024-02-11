@@ -4,7 +4,7 @@
   {{ range site.RegularPages }}
   <li class="p-3 m-2 text-base">
     <a class="text-purple-300" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
-    : {{ .Title }}
+    : {{ .Description }}
   </li>
   {{ end }}
 </ul>

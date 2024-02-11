@@ -11,7 +11,6 @@ themeColor = "red"
   [languages.en]
     languageName = "English"
     title = "JonaEnz"
-    subtitle = "A simple, retro theme for Hugo"
     owner = "Jona Enzinger"
     keywords = ""
     copyright = ""

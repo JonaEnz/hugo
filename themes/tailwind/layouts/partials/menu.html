@@ -1,51 +1,28 @@
-{{- /*
-Renders a menu for the given menu ID.
-
-@context {page} page The current page.
-@context {string} menuID The menu ID.
-
-@example: {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
-*/}}
-
-{{- $page := .page }}
-{{- $menuID := .menuID }}
-
-{{- with index site.Menus $menuID }}
-  <nav>
-  <div class="flex flex-row justify-left h-16 mx-3 my-2">
-      {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
-    </div>
-  </nav>
-{{- end }}
-
-{{- define "partials/inline/menu/walk.html" }}
-  {{- $page := .page }}
-  {{- range .menuEntries }}
-    {{- $attrs := dict "href" .URL }}
-    {{- if $page.IsMenuCurrent .Menu . }}
-      {{- $attrs = merge $attrs (dict "class" "active" "aria-current" "page") }}
-    {{- else if $page.HasMenuCurrent .Menu .}}
-      {{- $attrs = merge $attrs (dict "class" "ancestor" "aria-current" "true") }}
-    {{- end }}
-    {{- $name := .Name }}
-    {{- with .Identifier }}
-      {{- with T . }}
-        {{- $name = . }}
-      {{- end }}
-    {{- end }}
-    <div class="m-2 flex text-black border-black border rounded">
-      <a 
-        {{- range $k, $v := $attrs }}
-          {{- with $v }}
-            {{- printf " %s=%q" $k $v | safeHTMLAttr }}
-          {{- end }}
-        {{- end -}}
-      >{{ $name }}</a>
-      {{- with .Children }}
-        <ul>
-          {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
-        </ul>
-      {{- end }}
+{{- /* Renders a menu for the given menu ID. @context {page} page The current
+page. @context {string} menuID The menu ID. @example: {{ partial "menu.html"
+(dict "menuID" "main" "page" .) }} */}} {{- $page := .page }} {{- $menuID :=
+.menuID }} {{- with index site.Menus $menuID }}
+<nav class="flex flex-row h-16">
+  <p class="text-xl p-5 text-black font-semibold">
+    <a href="/">{{ site.Title }}</a>
+  </p>
+  <div class="flex justify-end w-full col-end-auto content-end">
+    {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
   </div>
+</nav>
+{{- end }} {{- define "partials/inline/menu/walk.html" }} {{- $page := .page }}
+{{- range .menuEntries }} {{- $attrs := dict "href" .URL }} {{- if
+$page.IsMenuCurrent .Menu . }} {{- $attrs = merge $attrs (dict "class" "active"
+"aria-current" "page") }} {{- else if $page.HasMenuCurrent .Menu .}} {{- $attrs
+= merge $attrs (dict "class" "ancestor" "aria-current" "true") }} {{- end }} {{-
+$name := .Name }} {{- with .Identifier }} {{- with T . }} {{- $name = . }} {{-
+end }} {{- end }}
+<div class="mx-3 my-2 flex text-black border-black border rounded">
+  <a class="p-3">{{ $name }}</a>
+  {{- with .Children }}
+  <ul>
+    {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
+  </ul>
   {{- end }}
-{{- end }}
+</div>
+{{- end }} {{- end }}

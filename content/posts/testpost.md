@@ -20,7 +20,7 @@ color = "" #color from the theme settings
 Here is some text.
 Text with a [Link](https://google.de/).
 
-Another line of text.
+Another line of text. Some more text in the same line to show where the wrap happens.
 Some **bold** text.
 
 1. first
@@ -30,4 +30,3 @@ Some **bold** text.
 - first
 - second
 - third
-

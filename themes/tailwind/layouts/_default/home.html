@@ -1,10 +1,11 @@
 {{ define "main" }} {{ .Content }}
-<h2 class="text-2xl m-2">Posts</h2>
+<h1 class="text-3xl p-2">Posts</h1>
 <ul class="list-disc ml-4 mb-4">
   {{ range site.RegularPages }}
   <li class="p-3 m-2 text-base">
-    <a class="text-purple-300" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
-    : {{ .Description }}
+    <a href="{{ .RelPermalink }}" class="text-purple-400"
+      >{{ .LinkTitle }}<span class="text-indigo-200">: {{ .Description}}</span>
+    </a>
   </li>
   {{ end }}
 </ul>

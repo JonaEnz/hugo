@@ -18,7 +18,7 @@ $page.IsMenuCurrent .Menu . }} {{- $attrs = merge $attrs (dict "class" "active"
 $name := .Name }} {{- with .Identifier }} {{- with T . }} {{- $name = . }} {{-
 end }} {{- end }}
 <div class="mx-3 my-2 flex text-black border-black border rounded">
-  <a class="p-3">{{ $name }}</a>
+  <a class="p-3" href="{{ .URL }}">{{ $name }}</a>
   {{- with .Children }}
   <ul>
     {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}

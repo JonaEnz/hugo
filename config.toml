@@ -31,3 +31,7 @@ themeColor = "red"
         identifier = "github"
         name = "Github"
         url = "https://github.com/JonaEnz"
+      [[languages.en.menu.main]]
+        identifier = "rss"
+        name = "RSS"
+        url = "https://gh.jonaenz.de/index.xml"
